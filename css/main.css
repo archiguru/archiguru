@@ -1,5 +1,5 @@
-@import url(https://netdna.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css);
-@import url("https://fonts.googleapis.com/css?family=Source+Sans+Pro:300");
+@import url(css/font-awesome.min.css);
+@import url(css/fonts.css);
 
 /* Reset */
 
@@ -1212,7 +1212,7 @@ button {
   -ms-transition: -ms-transform 0.325s ease-in-out,
     -ms-filter 0.325s ease-in-out;
   transition: transform 0.325s ease-in-out, filter 0.325s ease-in-out;
-  background-image: url("img/bg.jpg");
+  background-image: url("../img/bg.jpg");
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
