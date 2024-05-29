@@ -51,49 +51,48 @@
 		<!-- Footer -->
 		<footer id="footer">
 			<div class="mom1">
-				<h5>你的IP地址:
-					<script type="application/javascript" src="https://api.ip.sb/ip?callback=getip"></script>
-					<script type="text/javascript">
-						function getip(public_ip) {
-							document.write(public_ip);
-						}
-					</script>
-				</h5>你的位置信息:
-				<script type="application/javascript" src="https://api.ip.sb/geoip?callback=getcountry"></script>
-				<script type="text/javascript">
-					function getcountry(json) {
-						document.write("国家: ", json.country);
-						document.write("经度: ", json.longitude);
-						document.write("纬度: ", json.latitude);
-					}
-				</script>
+				<h5>你的IP地址: <span id="ip-address"></span></h5>
+				你的位置信息: <span id="location-info"></span>
 			</div>
 			<p class="copyright">©2024 <a href="https://archiguru.io" target="_blank">智享魔方工作室</a> 版权所有</p>
 		</footer>
-	</div>
 
-	<!-- BG -->
-	<div id="bg"></div>
+		<script type="text/javascript">
+			function getip(public_ip) {
+				document.getElementById("ip-address").textContent = public_ip;
+			}
 
-	<!-- Scripts -->
-	<script src="js/jquery.min.js"></script>
-	<script src="js/skel.min.js"></script>
-	<script src="js/util.js"></script>
-	<script src="js/main.js"></script>
-	<script src="js/su.js"></script>
-	<script type="text/javascript">jQuery(document).ready(function ($) {
-			$('body').wpSuperSnow({
-				flakes: ['img/008.png', 'img//008.png', 'img//004.png', 'img/002.png', 'img/008.png', 'img/003.png', 'img/008.png', 'img/008.png',],
-				totalFlakes: '90',
-				zIndex: '999999',
-				maxSize: '30',
-				maxDuration: '20',
-				useFlakeTrans: false
+			function getcountry(json) {
+				const locationInfo = `国家: ${json.country}, 经度: ${json.longitude}, 纬度: ${json.latitude}`;
+				document.getElementById("location-info").textContent = locationInfo;
+			}
+		</script>
+
+		<script type="application/javascript" src="https://api.ip.sb/ip?callback=getip"></script>
+		<script type="application/javascript" src="https://api.ip.sb/geoip?callback=getcountry"></script>
+
+		<!-- BG -->
+		<div id="bg"></div>
+
+		<!-- Scripts -->
+		<script src="js/jquery.min.js"></script>
+		<script src="js/skel.min.js"></script>
+		<script src="js/util.js"></script>
+		<script src="js/main.js"></script>
+		<script src="js/su.js"></script>
+		<script type="text/javascript">jQuery(document).ready(function ($) {
+				$('body').wpSuperSnow({
+					flakes: ['img/008.png', 'img//008.png', 'img//004.png', 'img/002.png', 'img/008.png', 'img/003.png', 'img/008.png', 'img/008.png',],
+					totalFlakes: '90',
+					zIndex: '999999',
+					maxSize: '30',
+					maxDuration: '20',
+					useFlakeTrans: false
+				});
 			});
-		});
-	</script>
-	<audio id="mom" src="https://archiguru.io/media/NgauHung.mp3" autoplay="autoplay" loop="-1" preload="auto"
-		type="audio/mp3"></audio>
+		</script>
+		<audio id="mom" src="https://archiguru.io/media/NgauHung.mp3" autoplay="autoplay" loop="-1" preload="auto"
+			type="audio/mp3"></audio>
 </body>
 
 </html>
