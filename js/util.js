@@ -13,21 +13,21 @@
         target = $this.attr("target");
       b.push(
         "<a " +
-          'class="link depth-' +
-          indent +
-          '"' +
-          (typeof target !== "undefined" && target != ""
-            ? ' target="' + target + '"'
-            : "") +
-          (typeof href !== "undefined" && href != ""
-            ? ' href="' + href + '"'
-            : "") +
-          ">" +
-          '<span class="indent-' +
-          indent +
-          '"></span>' +
-          $this.text() +
-          "</a>"
+        'class="link depth-' +
+        indent +
+        '"' +
+        (typeof target !== "undefined" && target != ""
+          ? ' target="' + target + '"'
+          : "") +
+        (typeof href !== "undefined" && href != ""
+          ? ' href="' + href + '"'
+          : "") +
+        ">" +
+        '<span class="indent-' +
+        indent +
+        '"></span>' +
+        $this.text() +
+        "</a>"
       );
     });
 
