@@ -51,14 +51,21 @@
 		<!-- Footer -->
 		<footer id="footer">
 			<div class="mom1">
-				<h5>你的IP:
-					<script src="https://cip.cc/"></script>
+				<h5>你的IP地址:
+					<script type="application/javascript" src="https://api.ip.sb/geoip?callback=getip"></script>
 					<script type="text/javascript">
-						document.write(returnCitySN["cip"])
+						function getip(json) {
+							document.write(json.ip);
+						}
 					</script>
-				</h5>你的地址:
+				</h5>你的位置信息:
+				<script type="application/javascript" src="https://api.ip.sb/geoip?callback=getcountry"></script>
 				<script type="text/javascript">
-					document.write(returnCitySN["cname"])
+					function getcountry(json) {
+						document.write("Country: ", json.country);
+						document.write("Latitude: ", json.latitude);
+						document.write("Longitude: ", json.longitude);
+					}
 				</script>
 			</div>
 			<p class="copyright">©2024 <a href="https://archiguru.io" target="_blank">智享魔方工作室</a> 版权所有</p>
