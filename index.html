@@ -52,10 +52,10 @@
 		<footer id="footer">
 			<div class="mom1">
 				<h5>你的IP地址:
-					<script type="application/javascript" src="https://api.ip.sb/geoip?callback=getip"></script>
+					<script type="application/javascript" src="https://api.ip.sb/ip?callback=getip"></script>
 					<script type="text/javascript">
-						function getip(json) {
-							document.write(json.ip);
+						function getip(public_ip) {
+							document.write(public_ip);
 						}
 					</script>
 				</h5>你的位置信息:
