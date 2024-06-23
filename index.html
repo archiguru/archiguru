@@ -1,100 +1,73 @@
-<!DOCTYPE HTML>
-<html>
+<!DOCTYPE html>
+<html lang="en">
 
 <head>
-	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-	<title>ArchiGuru - 智享魔方工作室</title>
-	<meta name="keywords" content="智享魔方 www.archiguru.io">
-	<meta name="description" content="智享魔方 www.archiguru.io">
-	<link rel="shortcut icon" href="favicon.ico">
-	<meta charset="utf-8" />
-	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-	<link href="https://cdn.bootcdn.net/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet">
-	<link rel="stylesheet" href="css/main.css" />
-	<noscript>
-		<link rel="stylesheet" href="css/noscript.css" />
-	</noscript>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ArchiGuru - 智享魔方工作室</title>
+    <meta name="keywords" content="智享魔方 www.archiguru.io">
+    <meta name="description" content="智享魔方 www.archiguru.io">
+    <link rel="shortcut icon" href="favicon.ico">
+    <link href="https://cdn.bootcdn.net/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/index.css">
 </head>
 
-<body onselectstart="return false" oncontextmenu=self.event.returnValue=false>
+<body>
+    <div id="container">
+        <header id="header">
+            <div class="logo">
+                <img src="img/logo.png" alt="logo">
+            </div>
+            <nav>
+                <ul class="nav-list">
+                    <li>首页</li>
+                </ul>
+            </nav>
+        </header>
+        <section class="content">
+            <div class="avatar-area">
+                <img src="img/avatar.png" alt="avatar">
+                <div class="connecting-line"></div>
+            </div>
+            <div class="text-area">
+                <p class="title">智享魔方</p>
+                <p class="description">欢迎来到魔方工作室</p>
+                <div class="main">
+                    <div class="connecting-line "></div>
+                    <ul class="main-list">
+                        <li><a href="https://archiguru.io" target="_blank"><i class="fa fa-home"></i>首页</a></li>
+                        <li><a href="https://blog.archiguru.io" target="_blank"><i class="fa fa-heart-o"></i>博客</a></li>
+                        <li><a href="https://archiguru.io" target="_blank"><i class="fa fa-comments-o"></i>微信</a></li>
+                        <li><a href="https://archiguru.io" target="_blank"><i class="fa fa-weibo"></i>微博</a></li>
+                        <li><a href="https://blog.archiguru.io" target="_blank"><i class="fa fa-qq"></i>Q Q</a></li>
+                        <li><a href="https://github.com/archiguru" target="_blank"><i
+                                    class="fa fa-github"></i>GitHub</a>
+                        </li>
+                    </ul>
+                </div>
+        </section>
+        <footer>
+            <div class="footer-ip">你的IP地址: <span id="ip-address"></span></div>
+            <div class="location">你的位置信息: <span id="location-info"></span></div>
+            <div class="copyright">
+                <p class="copyright">&copy;2024 <a href="https://archiguru.io" target="_blank">智享魔方工作室</a> 版权所有</p>
+            </div>
+        </footer>
+        <audio id="musicplayer" src="media/NgauHung.mp3" loop preload="auto" autoplay controls></audio>
+    </div>
+    <script type="text/javascript">
+        function getip(json) {
+            const public_ip = `${json.ip}`;
+            document.getElementById("ip-address").textContent = public_ip;
+        }
 
-	<!-- Wrapper -->
-	<div id="wrapper">
-
-		<!-- Header -->
-		<header id="header">
-			<div class="logo">
-
-				<img src="img/logo.png" alt="">
-			</div>
-			<div class="content">
-				<div class="inner">
-					<h1>智享魔方</h1>
-					<p>
-					<div id="chakhsu" style="text-align:center;color:green"></div>也许，只有真正动心了。才会为他所做的一件小事
-					在旁人看来无所谓，而在她看来却是心碎。
-					</p>
-				</div>
-			</div>
-			<nav>
-				<ul>
-					<li><a href="https://archiguru.io" target="_blank"><i class="fa fa-home"></i>首页</a></li>
-					<li><a href="https://blog.archiguru.io" target="_blank"><i class="fa fa-heart-o"></i>博客</a></li>
-					<li><a href="https://archiguru.io" target="_blank"><i class="fa fa-comments-o"></i>微信</a></li>
-					<li><a href="https://archiguru.io" target="_blank"><i class="fa fa-weibo"></i>微博</a></li>
-					<li><a href="https://blog.archiguru.io" target="_blank"><i class="fa fa-qq"></i>Q Q</a></li>
-					<li><a href="https://github.com/archiguru" target="_blank"><i class="fa fa-github"></i>GitHub</a>
-					</li>
-				</ul>
-			</nav>
-		</header>
-
-		<!-- Footer -->
-		<footer id="footer">
-			<div class="mom1">
-				<h5>你的IP地址: <span id="ip-address"></span></h5>
-				你的位置信息: <span id="location-info"></span>
-			</div>
-			<p class="copyright">©2024 <a href="https://archiguru.io" target="_blank">智享魔方工作室</a> 版权所有</p>
-		</footer>
-
-		<script type="text/javascript">
-			function getip(json) {
-			    const public_ip = `${json.ip}`;
-				document.getElementById("ip-address").textContent = public_ip;
-			}
-
-			function getcountry(json) {
-				const locationInfo = `国家: ${json.country}, 经度: ${json.longitude}, 纬度: ${json.latitude}`;
-				document.getElementById("location-info").textContent = locationInfo;
-			}
-		</script>
-
-		<script type="application/javascript" src="https://api.ip.sb/jsonip?callback=getip"></script>
-		<script type="application/javascript" src="https://api.ip.sb/geoip?callback=getcountry"></script>
-
-		<!-- BG -->
-		<div id="bg"></div>
-
-		<!-- Scripts -->
-		<script src="https://cdn.bootcdn.net/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-		<script src="https://cdn.bootcdn.net/ajax/libs/skel/3.0.1/skel.min.js"></script>
-		<script src="js/util.js"></script>
-		<script src="js/main.js"></script>
-		<script src="js/su.js"></script>
-		<script type="text/javascript">jQuery(document).ready(function ($) {
-				$('body').wpSuperSnow({
-					flakes: ['img/008.png', 'img//008.png', 'img//004.png', 'img/002.png', 'img/008.png', 'img/003.png', 'img/008.png', 'img/008.png',],
-					totalFlakes: '90',
-					zIndex: '999999',
-					maxSize: '30',
-					maxDuration: '20',
-					useFlakeTrans: false
-				});
-			});
-		</script>
-		<audio id="mom" src="https://archiguru.io/media/NgauHung.mp3" autoplay="autoplay" loop="-1" preload="auto"
-			type="audio/mp3"></audio>
+        function getcountry(json) {
+            const locationInfo = `国家: ${json.country}, 经度: ${json.longitude}, 纬度: ${json.latitude}`;
+            document.getElementById("location-info").textContent = locationInfo;
+        }
+    </script>
+    <script type="application/javascript" src="https://api.ip.sb/jsonip?callback=getip"></script>
+    <script type="application/javascript" src="https://api.ip.sb/geoip?callback=getcountry"></script>
 </body>
 
 </html>
