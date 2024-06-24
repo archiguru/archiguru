@@ -2,11 +2,13 @@
   margin: 0;
   padding: 0;
 }
+body {
+  background-color: rgb(94, 55, 11);
+}
 #container {
   position: relative;
   padding: 10px;
   height: 100%;
-  min-height: 938px;
   max-width: 1190px;
   font-size: 14px;
   font-family: yahei;
@@ -37,7 +39,7 @@ header nav ul {
   margin-left: 20px;
 }
 .content .avatar-area {
-  height: 230px;
+  height: 26vh;
   margin: 10px;
   text-align: center;
 }
@@ -51,13 +53,13 @@ header nav ul {
 }
 .connecting-line {
   width: 2px;
-  height: 60px;
+  height: 8vh;
   background-color: #ccc;
   margin: 0 auto;
 }
 .content .text-area {
   text-align: center;
-  margin-top: 60px;
+  margin-top: 6vh;
   letter-spacing: 6px;
 }
 .content .text-area .title {
@@ -69,11 +71,12 @@ header nav ul {
   color: orange;
 }
 .content .main .connecting-line {
-  margin-top: 60px;
+  margin-top: 6vh;
 }
 .content .main .main-list {
   margin-top: 10px;
   width: 100%;
+  margin-left: -5px;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -81,6 +84,7 @@ header nav ul {
 .content .main .main-list li {
   border: 1px solid #ccc;
   width: 15%;
+  min-width: 150px;
   height: 30px;
   line-height: 30px;
   margin-bottom: 20px;
@@ -89,9 +93,9 @@ header nav ul {
   border-radius: 6px;
   box-shadow: rgba(0, 0, 0, 0.1) 0px 8px 16px;
 }
-.content .main .main-list li:first-child {
+/* .content .main .main-list li:first-child {
   margin-left: 0;
-}
+} */
 .main-list li a {
   color: #333;
 }
@@ -101,8 +105,8 @@ header nav ul {
 }
 footer {
   text-align: center;
-  margin-top: 80px;
-  font-size: 0.75rem;
+  margin-top: 4vh;
+  font-size: 0.8rem;
   height: 130px;
   color: orange;
 }
