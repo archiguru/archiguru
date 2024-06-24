@@ -12,6 +12,9 @@
   font-family: yahei;
   background-color: rgb(242, 234, 225);
   margin: 5px auto;
+  /* background-image: url(https://img.archiguru.io/archiguru/bg.webp);
+  background-size: cover;
+  background-repeat: no-repeat; */
 }
 header {
   width: 100%;
