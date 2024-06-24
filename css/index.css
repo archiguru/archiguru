@@ -2,9 +2,6 @@
   margin: 0;
   padding: 0;
 }
-body {
-  background-color: rgb(94, 55, 11);
-}
 #container {
   position: relative;
   padding: 10px;
@@ -13,7 +10,7 @@ body {
   font-size: 14px;
   font-family: yahei;
   background-color: rgb(242, 234, 225);
-  margin: 5px auto;
+  margin: 0 auto;
   /* background-image: url(https://img.archiguru.io/archiguru/bg.webp);
   background-size: cover;
   background-repeat: no-repeat; */
