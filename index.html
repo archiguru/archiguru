@@ -13,61 +13,124 @@
 </head>
 
 <body>
-    <div id="container">
-        <header id="header">
-            <div class="logo">
-                <img src="https://img.archiguru.io/archiguru/logo.png" alt="logo">
-            </div>
-            <nav>
-                <ul class="nav-list">
-                    <li>首页</li>
-                </ul>
-            </nav>
-        </header>
-        <section class="content">
-            <div class="avatar-area">
-                <img src="https://img.archiguru.io/archiguru/main_avatar.png" alt="avatar">
-                <div class="connecting-line"></div>
-            </div>
-            <div class="text-area">
-                <p class="title">智享魔方</p>
-                <p class="description">欢迎来到魔方工作室</p>
-                <div class="main">
-                    <div class="connecting-line "></div>
-                    <ul class="main-list">
-                        <li><a href="https://archiguru.io" target="_blank"><i class="fa fa-home"></i>首页</a></li>
-                        <li><a href="https://blog.archiguru.io" target="_blank"><i class="fa fa-heart-o"></i>博客</a></li>
-                        <li><a href="https://archiguru.io" target="_blank"><i class="fa fa-comments-o"></i>微信</a></li>
-                        <li><a href="https://archiguru.io" target="_blank"><i class="fa fa-weibo"></i>微博</a></li>
-                        <li><a href="https://blog.archiguru.io" target="_blank"><i class="fa fa-qq"></i>Q Q</a></li>
-                        <li><a href="https://github.com/archiguru" target="_blank"><i
-                                    class="fa fa-github"></i>GitHub</a>
-                        </li>
-                    </ul>
+    <div id="container-bg">
+        <div id="container">
+            <header id="header">
+                <div class="logo">
+                    <img src="https://img.archiguru.io/archiguru/logo.png" alt="logo">
                 </div>
-        </section>
-        <footer>
-            <div class="footer-ip">你的IP地址: <span id="ip-address"></span></div>
-            <div class="location">你的位置信息: <span id="location-info"></span></div>
-            <div class="copyright">
-                <p class="copyright">&copy;2024 <a href="https://archiguru.io" target="_blank">智享魔方工作室</a> 版权所有</p>
-            </div>
-        </footer>
-        <audio id="musicplayer" src="https://img.archiguru.io/archiguru/ngau-hung.mp3" loop preload="auto" autoplay
-            controls></audio>
+                <nav>
+                    <ul class="nav-list">
+                        <li>首页</li>
+                    </ul>
+                </nav>
+            </header>
+            <section class="content">
+                <div class="avatar-area">
+                    <img src="https://img.archiguru.io/archiguru/main_avatar.png" alt="avatar">
+                    <div class="connecting-line"></div>
+                </div>
+                <div class="text-area">
+                    <p class="title">智享魔方</p>
+                    <p class="description">欢迎来到魔方工作室</p>
+                    <div class="main">
+                        <div class="connecting-line "></div>
+                        <ul class="main-list">
+                            <li><a href="https://archiguru.io" target="_blank"><i class="fa fa-home"></i>首页</a></li>
+                            <li><a href="https://blog.archiguru.io" target="_blank"><i
+                                        class="fa fa-heart-o"></i><span>博客</span></a>
+                            </li>
+                            <li><a href="https://archiguru.io" target="_blank"><i
+                                        class="fa fa-comments-o"></i><span>微信</span></a>
+                            </li>
+                            <li><a href="https://archiguru.io" target="_blank"><i
+                                        class="fa fa-weibo"></i><span>微博</span></a></li>
+                            <li><a href="https://blog.archiguru.io" target="_blank"><i class="fa fa-qq"></i><span>Q
+                                        Q</span></a></li>
+                            <li><a href="https://github.com/archiguru" target="_blank"><i
+                                        class="fa fa-github"></i><span>GitHub</span></a>
+                            </li>
+                        </ul>
+                    </div>
+            </section>
+            <footer>
+                <div class="footer-ip"> <span id="ip-address"></span></div>
+                <div class="location">你的位置信息: <span id="location-info"></span></div>
+                <div class="copyright">
+                    <p class="copyright">&copy;2024 <a href="https://archiguru.io" target="_blank">智享魔方工作室</a> 版权所有</p>
+                </div>
+            </footer>
+            <audio id="musicplayer" src="https://img.archiguru.io/archiguru/ngau-hung.mp3" loop preload="auto" autoplay
+                controls></audio>
+        </div>
     </div>
-    <script type="text/javascript">
+    <script>
         function getip(json) {
-            const public_ip = `${json.ip}`;
-            document.getElementById("ip-address").textContent = public_ip;
+            console.log(json + 'json');
+            const public_ip = json.ip;
+            document.getElementById("ip-address").textContent = "你的IP地址: " + public_ip;
         }
+
+        function loadJSONP(url, callbackName, timeout = 5000) {
+            let script = document.createElement('script');
+            script.src = `${url}&callback=${callbackName}`;
+            console.log(script.src, "0000");
+
+            // 创建一个 Promise 用于处理超时
+            let promise = new Promise((resolve, reject) => {
+                let timer = setTimeout(() => {
+                    reject(new Error('JSONP request timed out'));
+                    cleanup();
+                }, timeout);
+
+                window[callbackName] = function (data) {
+                    clearTimeout(timer);
+                    resolve(data);
+                    cleanup();
+                };
+
+                function cleanup() {
+                    delete window[callbackName];
+                    script.parentNode.removeChild(script);
+                }
+
+                document.head.appendChild(script);
+            });
+
+            return promise;
+        }
+
+        // 发起 JSONP 请求并设置超时时间为 5 秒
+        loadJSONP('https://api.ip.sb/jsonip', 'getip', 5000)
+            .then(data => {
+                console.log('JSONP response:', data);
+            })
+            .catch(error => {
+                console.error('JSONP request failed:', error.message);
+            });
+    </script>
+    <script type="text/javascript">
+
+
+        // function getip(json) {
+        //     const public_ip = json.ip;
+        //     document.getElementById("ip-address").textContent = "你的IP地址: " + public_ip;
+        // }
+
 
         function getcountry(json) {
             const locationInfo = `国家: ${json.country}, 经度: ${json.longitude}, 纬度: ${json.latitude}`;
             document.getElementById("location-info").textContent = locationInfo;
         }
+
+        function handleResponse(json) {
+            const wpAddress = json.images.url;
+            document.getElementById("wp-address").textContent = wpAddress;
+        }
     </script>
-    <script type="application/javascript" src="https://api.ip.sb/jsonip?callback=getip"></script>
+    <script type="application/javascript"
+        src="https://cn.bing.com/HPImageArchive.aspx?format=js&idx=0&n=1&mkt=zh-CN&callback=handleResponse"></script>
+    <!-- <script type="application/javascript" src="https://api.ip.sb/jsonip?callback=getip"></script> -->
     <script type="application/javascript" src="https://api.ip.sb/geoip?callback=getcountry"></script>
 </body>
 
