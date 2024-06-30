@@ -64,6 +64,25 @@
                 controls></audio>
         </div>
     </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
+        integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script type="text/javascript">
+        var req = {
+            "url": "https://bing.archiguru.io/HPImageArchive.aspx?format=js&idx=0&n=1&mkt=zh-CN",
+            "method": "GET",
+            "dataType": "json",
+            "success": function (response) {
+                console.log(response);
+                console.log(response.images);
+                console.log(response.images[0]);
+                console.log(response.images[0].url);
+            }
+        };
+        $.ajax(req).done(function (response) {
+            console.log(response);
+        });
+    </script>
     <script>
         function getip(json) {
             console.log(json + 'json');
@@ -100,14 +119,14 @@
             return promise;
         }
 
-        // 发起 JSONP 请求并设置超时时间为 5 秒
-        loadJSONP('https://api.ip.sb/jsonip', 'getip', 5000)
-            .then(data => {
-                console.log('JSONP response:', data);
-            })
-            .catch(error => {
-                console.error('JSONP request failed:', error.message);
-            });
+        // // 发起 JSONP 请求并设置超时时间为 5 秒
+        // loadJSONP('https://api.ip.sb/jsonip', 'getip', 5000)
+        //     .then(data => {
+        //         console.log('JSONP response:', data);
+        //     })
+        //     .catch(error => {
+        //         console.error('JSONP request failed:', error.message);
+        //     });
     </script>
     <script type="text/javascript">
 
@@ -128,10 +147,9 @@
             document.getElementById("wp-address").textContent = wpAddress;
         }
     </script>
-    <script type="application/javascript"
-        src="https://cn.bing.com/HPImageArchive.aspx?format=js&idx=0&n=1&mkt=zh-CN&callback=handleResponse"></script>
+    <!-- <script type="application/javascript" src="https://cn.bing.com/HPImageArchive.aspx?format=js&idx=0&n=1&mkt=zh-CN&callback=handleResponse"></script> -->
     <!-- <script type="application/javascript" src="https://api.ip.sb/jsonip?callback=getip"></script> -->
-    <script type="application/javascript" src="https://api.ip.sb/geoip?callback=getcountry"></script>
+    <!-- <script type="application/javascript" src="https://api.ip.sb/geoip?callback=getcountry"></script> -->
 </body>
 
 </html>
