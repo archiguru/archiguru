@@ -5,7 +5,14 @@
   /* 让内边距和边框不会增加元素的实际尺寸 */
 }
 
+html,
 body {
+  margin: 0;
+  height: 100%;
+}
+
+body {
+  height: 100%;
   font-family: 'Microsoft YaHei', sans-serif;
   background-color: #00000060;
   color: #eee;
@@ -21,14 +28,21 @@ a {
   text-decoration: none;
 }
 
+a:hover {
+  color: orange;
+  text-decoration: none;
+  cursor: pointer;
+}
+
 #container-bg {
-  background-image: url(https://img.archiguru.io/archiguru/bg.webp);
+  height: 100%;
+  background-image: url(https://api.bimg.cc/today?w=1920&h=1080&uhd=False&mkt=en-US);
   background-size: cover;
-  height: fit-content;
   background-repeat: no-repeat;
 }
 
 #container {
+  height: 100%;
   max-width: 1190px;
   margin: 0 auto;
   padding: 10px;
@@ -45,10 +59,10 @@ header .logo {
   flex: 0 0 auto;
 }
 
-header li {
+header .logo-text {
   font-size: large;
   font-weight: 600;
-  color: #d98102;
+  color: #ebebeb;
 }
 
 header .logo img {
@@ -69,7 +83,7 @@ header nav ul {
 } */
 
 .content .avatar-area {
-  height: 26vh;
+  height: 20vh;
   margin: 10px;
   text-align: center;
 }
@@ -108,6 +122,7 @@ header nav ul {
 
 .content .main .connecting-line {
   margin-top: 6vh;
+  margin-bottom: 6vh;
 }
 
 .content .main .main-list {
@@ -120,15 +135,17 @@ header nav ul {
 }
 
 .content .main .main-list li {
-  border: 1px solid #ccc;
+  font-size: x-large;
+  font-weight: 600;
+  border: 2px solid #FFFDF0;
   width: 15%;
-  min-width: 150px;
-  height: 30px;
-  line-height: 30px;
+  min-width: 168px;
+  height: 48px;
+  line-height: 48px;
   margin-bottom: 20px;
   margin-left: 10px;
   background-color: transparent;
-  border-radius: 6px;
+  border-radius: 8px;
   box-shadow: rgba(0, 0, 0, 0.1) 0px 8px 16px;
 }
 
@@ -149,16 +166,20 @@ header nav ul {
 
 .fa {
   position: relative;
-  margin: 6px 10px;
+  margin-left: 12px;
+  margin-top: 10px;
   float: left;
 }
 
 footer {
+  width: 1190px;
+  position: fixed;
+  bottom: 0;
+  line-height: 100%;
   text-align: center;
-  margin-top: 4vh;
   font-size: 0.8rem;
-  height: 130px;
-  color: orange;
+  height: 64px;
+  color: #c0c0c0;
 }
 
 footer .footer-ip {
@@ -181,6 +202,15 @@ footer .copyright a {
 
 /* 响应式设计 */
 @media (max-width: 768px) {
+
+  #container {
+    max-width: 1190px;
+  }
+
+  footer {
+    width: 1190px;
+  }
+
   header {
     display: flex;
     align-items: center;
@@ -228,5 +258,16 @@ footer .copyright a {
 
   .main-list li {
     width: 120px;
+  }
+}
+
+/* 超宽屏设计 */
+@media (min-width: 2000px) {
+  #container {
+    max-width: 1680px;
+  }
+
+  footer {
+    width: 1680px;
   }
 }

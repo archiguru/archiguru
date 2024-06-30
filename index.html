@@ -21,7 +21,7 @@
                 </div>
                 <nav>
                     <ul class="nav-list">
-                        <li>首页</li>
+                        <li class="logo-text"><a href="/">首页</a></li>
                     </ul>
                 </nav>
             </header>
@@ -55,7 +55,7 @@
             </section>
             <footer>
                 <div class="footer-ip"> <span id="ip-address"></span></div>
-                <div class="location">你的位置信息: <span id="location-info"></span></div>
+                <div class="location"><span id="location-info"></span></div>
                 <div class="copyright">
                     <p class="copyright">&copy;2024 <a href="https://archiguru.io" target="_blank">智享魔方工作室</a> 版权所有</p>
                 </div>
@@ -67,22 +67,6 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
         integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <script type="text/javascript">
-        var req = {
-            "url": "https://bing.archiguru.io/HPImageArchive.aspx?format=js&idx=0&n=1&mkt=zh-CN",
-            "method": "GET",
-            "dataType": "json",
-            "success": function (response) {
-                console.log(response);
-                console.log(response.images);
-                console.log(response.images[0]);
-                console.log(response.images[0].url);
-            }
-        };
-        $.ajax(req).done(function (response) {
-            console.log(response);
-        });
-    </script>
     <script>
         function getip(json) {
             console.log(json + 'json');
@@ -131,14 +115,15 @@
     <script type="text/javascript">
 
 
-        // function getip(json) {
-        //     const public_ip = json.ip;
-        //     document.getElementById("ip-address").textContent = "你的IP地址: " + public_ip;
-        // }
+        function getip(json) {
+            const public_ip = json.ip;
+            document.getElementById("ip-address").textContent = "你的IP地址: " + public_ip;
+        }
 
 
         function getcountry(json) {
-            const locationInfo = `国家: ${json.country}, 经度: ${json.longitude}, 纬度: ${json.latitude}`;
+            const locationInfo = `你的位置信息:
+            国家: ${json.country}, 经度: ${json.longitude}, 纬度: ${json.latitude}`;
             document.getElementById("location-info").textContent = locationInfo;
         }
 
@@ -147,9 +132,8 @@
             document.getElementById("wp-address").textContent = wpAddress;
         }
     </script>
-    <!-- <script type="application/javascript" src="https://cn.bing.com/HPImageArchive.aspx?format=js&idx=0&n=1&mkt=zh-CN&callback=handleResponse"></script> -->
-    <!-- <script type="application/javascript" src="https://api.ip.sb/jsonip?callback=getip"></script> -->
-    <!-- <script type="application/javascript" src="https://api.ip.sb/geoip?callback=getcountry"></script> -->
+    <script type="application/javascript" src="https://api.ip.sb/jsonip?callback=getip"></script>
+    <script type="application/javascript" src="https://api.ip.sb/geoip?callback=getcountry"></script>
 </body>
 
 </html>
