@@ -36,16 +36,20 @@ a:hover {
 
 #container-bg {
   height: 100%;
+  background: #0a0a0a
+    url(https://api.bimg.cc/today?w=1920&h=1080&uhd=False&mkt=zh-CN) no-repeat
+    center / 50% 50%;
   background-image: url(https://api.bimg.cc/today?w=1920&h=1080&uhd=False&mkt=en-US);
   background-size: cover;
   background-repeat: no-repeat;
 }
 
 #container {
+  padding-bottom: 64px;
   height: 100%;
   max-width: 1190px;
   margin: 0 auto;
-  padding: 10px;
+  padding: 8px;
   background-color: rgba(0, 0, 0, 0.8);
 }
 
@@ -83,8 +87,8 @@ header nav ul {
 } */
 
 .content .avatar-area {
-  height: 20vh;
-  margin: 10px;
+  /* height: 20vh; */
+  margin-top: 10px;
   text-align: center;
 }
 
@@ -99,33 +103,35 @@ header nav ul {
 
 .connecting-line {
   width: 2px;
-  height: 8vh;
+  height: 6vh;
   background-color: #ccc;
-  margin: 0 auto;
+  margin: 12px auto;
 }
 
 .content .text-area {
   text-align: center;
-  margin-top: 6vh;
+  /* margin-top: 6vh; */
   letter-spacing: 6px;
 }
 
 .content .text-area .title {
   font-size: 2.5rem;
-  margin: 20px;
+  /* margin: 20px; */
   color: orange;
 }
 
 .content .text-area .description {
+  padding-top: 24px;
   color: orange;
 }
 
 .content .main .connecting-line {
-  margin-top: 6vh;
-  margin-bottom: 6vh;
+  margin-top: 2vh;
+  /* margin-bottom: 6vh; */
 }
 
 .content .main .main-list {
+  padding: 24px;
   width: 100%;
   margin-left: -5px;
   display: flex;
@@ -138,7 +144,7 @@ header nav ul {
   font-weight: 500;
   border: 2px solid #fffdf0;
   width: 15%;
-  min-width: 162px;
+  min-width: 144px;
   height: 44px;
   line-height: 44px;
   margin-bottom: 16px;
@@ -151,10 +157,8 @@ header nav ul {
 /* .content .main .main-list li:first-child {
   margin-left: 0;
 } */
-
-.main-list li a span {
-  position: relative;
-  align-items: center;
+.main-list li a {
+  margin-left: -12px;
 }
 
 .main-list li a:hover {
@@ -162,20 +166,30 @@ header nav ul {
   cursor: pointer;
 }
 
-.fa {
+.main-list li a span {
   position: relative;
-  margin-left: 12px;
-  margin-top: 10px;
+}
+
+.main-list li .tag {
+  width: 100px;
+}
+
+.main-list li .fa {
+  padding-top: 14px;
+  padding-left: 14px;
+  position: relative;
   float: left;
 }
 
 footer {
-  width: 1168px;
-  position: absolute;
-  bottom: 0.8rem;
+  position: relative;
+  margin-top: -64px;
+  height: 64px;
+  clear: both;
   line-height: 100%;
   text-align: center;
   font-size: 0.8rem;
+  bottom: 0.8rem;
   height: 64px;
   color: #c0c0c0;
 }
@@ -261,8 +275,42 @@ footer .copyright a {
   #container {
     max-width: 1680px;
   }
+}
 
+/* 适配高度 */
+@media (max-height: 650px) {
+  .content .main .main-list li {
+    min-width: 44%;
+  }
+  /* 44% */
+  .connecting-line {
+    display: none;
+  }
+  .content .avatar-area {
+    display: none;
+  }
+  .content .text-area .description {
+    padding-bottom: 24px;
+    color: orange;
+  }
+}
+
+/* footer 适配高度 */
+@media (max-height: 768px) {
   footer {
-    width: 1668px;
+    display: none;
+  }
+}
+
+/* footer 适配高度 */
+@media (max-width: 380px) {
+  footer {
+    display: none;
+  }
+  .content .main .main-list li {
+    min-width: 124px;
+  }
+  .main-list li .fa {
+    display: none;
   }
 }
