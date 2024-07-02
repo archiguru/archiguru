@@ -8,7 +8,7 @@
     <meta name="keywords" content="智享魔方 www.archiguru.io">
     <meta name="description" content="智享魔方 www.archiguru.io">
     <link rel="shortcut icon" href="https://img.archiguru.io/archiguru/favicon.ico">
-    <link href="https://cdn.bootcdn.net/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="css/index.css">
 </head>
 
@@ -21,7 +21,8 @@
                 </div>
                 <nav>
                     <ul class="nav-list">
-                        <span class="logo-text"><a href="/">首页</a></span>
+                        <li><a href="/" target="_blank"><i class="fa fa-home"></i><span> 首页 </span></a></li>
+                        <li><a href="/rss" target="_blank"><i class="fa fa-rss"></i><span> RSS </span></a></li>
                     </ul>
                 </nav>
             </header>
@@ -51,12 +52,11 @@
     </div>
     <script>
         const links = [
-            // <a href="http://wpa.qq.com/msgrd?v=3&uin=1234567&site=qq&menu=yes">QQ客服1</a>
             { name: '导航', url: 'https://one.eoysky.com/', icon: 'fa-book' },
-            { name: '博客', url: 'https://blog.archiguru.io', icon: 'fa-heart-o' },
+            { name: '博客', url: 'https://blog.archiguru.io', icon: 'fa-newspaper-o' },
             { name: '微博', url: 'https://weibo.com', icon: 'fa-weibo' },
-            { name: '微信', url: 'http://wpa.qq.com/msgrd?v=3&uin=10947580&site=qq&menu=yes', icon: 'fa-wechat' },
-            { name: 'QQ', url: 'http://wpa.qq.com/msgrd?v=3&uin=10947580&site=qq&menu=yes', icon: 'fa-qq' },
+            { name: 'Mail', url: 'mailto:someone@example.com', icon: 'envelope' },
+            { name: 'Telegram', url: 'https://t.me/telegram', icon: 'fa-qq' },
             { name: 'GitHub', url: 'https://github.com/archiguru', icon: 'fa-github' },
         ];
         const listElement = document.getElementById('mainList');
