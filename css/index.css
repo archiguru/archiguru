@@ -52,7 +52,7 @@ a:hover {
 }
 
 header {
-  border-radius: 8px;
+  border-radius: 16px;
   background-color: #32302fdd;
   display: flex;
   width: 100%;
@@ -148,7 +148,7 @@ header nav ul li {
   font-size: medium;
   font-weight: 500;
   border: 2px solid #fffdf0;
-  width: 15%;
+  width: 20%;
   min-width: 168px;
   height: 44px;
   line-height: 44px;
