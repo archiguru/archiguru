@@ -13,7 +13,7 @@ body {
 
 body {
   height: 100%;
-  font-family: 'Microsoft YaHei', sans-serif;
+  font-family: "Microsoft YaHei", sans-serif;
   background-color: #00000060;
   color: #eee;
   line-height: 1.6;
@@ -126,7 +126,6 @@ header nav ul {
 }
 
 .content .main .main-list {
-  margin-top: 10px;
   width: 100%;
   margin-left: -5px;
   display: flex;
@@ -135,14 +134,14 @@ header nav ul {
 }
 
 .content .main .main-list li {
-  font-size: x-large;
-  font-weight: 600;
-  border: 2px solid #FFFDF0;
+  font-size: medium;
+  font-weight: 500;
+  border: 2px solid #fffdf0;
   width: 15%;
-  min-width: 168px;
-  height: 48px;
-  line-height: 48px;
-  margin-bottom: 20px;
+  min-width: 162px;
+  height: 44px;
+  line-height: 44px;
+  margin-bottom: 16px;
   margin-left: 10px;
   background-color: transparent;
   border-radius: 8px;
@@ -156,7 +155,6 @@ header nav ul {
 .main-list li a span {
   position: relative;
   align-items: center;
-  /* float: right; */
 }
 
 .main-list li a:hover {
@@ -172,9 +170,9 @@ header nav ul {
 }
 
 footer {
-  width: 1190px;
-  position: fixed;
-  bottom: 0;
+  width: 1168px;
+  position: absolute;
+  bottom: 0.8rem;
   line-height: 100%;
   text-align: center;
   font-size: 0.8rem;
@@ -199,27 +197,24 @@ footer .copyright a {
   display: none;
 }
 
-
 /* 响应式设计 */
 @media (max-width: 768px) {
-
   #container {
-    max-width: 1190px;
+    max-width: 100%;
   }
 
   footer {
-    width: 1190px;
+    width: 100%;
   }
 
   header {
-    display: flex;
+    margin: 8px;
     align-items: center;
   }
 
   header .logo {
     margin-bottom: 10px;
   }
-
 
   header li {
     font-size: large;
@@ -268,6 +263,6 @@ footer .copyright a {
   }
 
   footer {
-    width: 1680px;
+    width: 1668px;
   }
 }
