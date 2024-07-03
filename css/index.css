@@ -35,7 +35,6 @@ a:hover {
 }
 
 #container-bg {
-  margin: 0 auto;
   height: 100%;
   background: #1d2021 url(https://bing.img.run/1920x1080.php) no-repeat;
   background-size: cover;
@@ -187,7 +186,7 @@ header nav ul li {
   .wechat-qr {
     width: 194px;
     height: 204px;
-    background: url(https://img.archiguru.io/archiguru/IMG_3830.JPG);
+    background: url(https://img.archiguru.io/archiguru/IMG_3832.JPG);
     background-size: 100%;
     position: absolute;
     bottom: 420px;
@@ -236,7 +235,6 @@ footer .copyright a {
   }
 
   header {
-    margin: 8px;
     align-items: center;
   }
 

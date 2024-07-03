@@ -78,6 +78,7 @@
             a.appendChild(icon);
             a.appendChild(span);
             if (link.name === '微信') {
+                a.removeAttribute('href');
                 const wechat = document.createElement('div');
                 wechat.className = link.class + '-qr';
                 a.appendChild(wechat);
