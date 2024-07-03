@@ -46,7 +46,6 @@ a:hover {
   height: 100%;
   max-width: 1190px;
   margin: 0 auto;
-  padding: 8px;
   background-color: #282828ae;
 }
 
@@ -59,10 +58,10 @@ header {
 }
 
 header .logo {
-  margin: 0;
-  line-height: 100%;
+  display: flex;
+  align-items: center;
   width: calc(100% - 192px);
-  flex: 0 0 auto;
+  flex: 0 auto;
 }
 
 header .logo-text {
@@ -72,11 +71,9 @@ header .logo-text {
 }
 
 header .logo img {
-  width: 54px;
-  height: 54px;
-  line-height: 64px;
-  margin: 0;
-  margin-left: 24px;
+  width: 56px;
+  height: 56px;
+  margin-left: 8px;
 }
 
 header nav ul {
