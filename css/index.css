@@ -35,6 +35,7 @@ a:hover {
 }
 
 #container-bg {
+  margin: 0 auto;
   height: 100%;
   background: #1d2021 url(https://bing.img.run/1920x1080.php) no-repeat;
   background-size: cover;
@@ -155,9 +156,6 @@ header nav ul li {
   box-shadow: rgba(0, 0, 0, 0.1) 0px 8px 16px;
 }
 
-/* .content .main .main-list li:first-child {
-  margin-left: 0;
-} */
 .main-list li a {
   margin-left: -12px;
 }
@@ -180,6 +178,21 @@ header nav ul li {
   padding-left: 14px;
   position: relative;
   float: left;
+}
+
+.main-list .wechat-li {
+  &:hover .wechat-qr {
+    display: block;
+  }
+  .wechat-qr {
+    width: 204px;
+    height: 204px;
+    background: url(https://bing.img.run/1920x1080.php);
+    background-size: 100%;
+    position: absolute;
+    display: none;
+    bottom: 100px;
+  }
 }
 
 footer {

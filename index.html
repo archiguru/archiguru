@@ -54,20 +54,22 @@
     </div>
     <script>
         const links = [
-            { name: '导航', url: 'https://one.eoysky.com/', icon: 'fa-map-marker' },
-            { name: '博客', url: 'https://blog.archiguru.io', icon: 'fa-newspaper-o' },
-            { name: '微博', url: 'https://weibo.com', icon: 'fa-weibo' },
-            { name: 'QQ', url: 'mailto:someone@example.com', icon: 'fa-qq' },
-            { name: 'Telegram', url: 'https://t.me/telegram', icon: 'fa-telegram' },
-            { name: 'Blogger', url: 'https://blogger.archiguru.io', icon: 'fa-rss-square' },
-            { name: 'GitHub', url: 'https://github.com/archiguru', icon: 'fa-github-alt' },
-            { name: 'Mail', url: 'mailto:someone@example.com', icon: 'fa-envelope' },
+            { name: '导航', url: 'https://one.eoysky.com/', class: 'nav', icon: 'fa-map-marker' },
+            { name: '博客', url: 'https://blog.archiguru.io', class: 'blog', icon: 'fa-newspaper-o' },
+            { name: '微博', url: 'https://weibo.com/u/2080081175', class: 'webo', icon: 'fa-weibo' },
+            { name: '微信', url: '#', class: 'wechat', icon: 'fa-wechat' },
+            { name: 'Telegram', url: 'https://t.me/telegram', class: 'telegram', icon: 'fa-telegram' },
+            { name: 'Blogger', url: 'https://blogger.archiguru.io/', class: 'blogger', icon: 'fa-rss-square' },
+            { name: 'GitHub', url: 'https://github.com/archiguru', class: 'github', icon: 'fa-github-alt' },
+            { name: 'Mail', url: 'mailto:someone@example.com', class: 'mail', icon: 'fa-envelope' },
         ];
         const listElement = document.getElementById('mainList');
         links.forEach(link => {
             const li = document.createElement('li');
+            li.className = link.class + '-li';
             const a = document.createElement('a');
             a.href = link.url;
+            a.className = link.class + '-a';
             a.target = '_blank';
             const icon = document.createElement('i');
             icon.className = `fa ${link.icon}`;
@@ -75,6 +77,11 @@
             span.textContent = link.name;
             a.appendChild(icon);
             a.appendChild(span);
+            if (link.name === '微信') {
+                const wechat = document.createElement('div');
+                wechat.className = link.class + '-qr';
+                a.appendChild(wechat);
+            }
             li.appendChild(a);
             listElement.appendChild(li);
         });
@@ -117,15 +124,6 @@
 
             return promise;
         }
-
-        // // 发起 JSONP 请求并设置超时时间为 5 秒
-        // loadJSONP('https://api.ip.sb/jsonip', 'getip', 5000)
-        //     .then(data => {
-        //         console.log('JSONP response:', data);
-        //     })
-        //     .catch(error => {
-        //         console.error('JSONP request failed:', error.message);
-        //     });
     </script>
     <script type="text/javascript">
 
