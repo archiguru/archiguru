@@ -37,18 +37,17 @@ a:hover {
 #container-bg {
   height: 100%;
   background: #1d2021 url(https://bing.img.run/1920x1080.php) no-repeat;
-  /* background-image: url(https://api.bimg.cc/today?w=1920&h=1080&uhd=False&mkt=en-US); */
   background-size: cover;
   background-repeat: no-repeat;
 }
 
 #container {
-  padding-bottom: 64px;
+  backdrop-filter: blur(6px);
   height: 100%;
   max-width: 1190px;
   margin: 0 auto;
   padding: 8px;
-  background-color: #282828dd;
+  background-color: #282828ae;
 }
 
 header {
@@ -60,6 +59,8 @@ header {
 }
 
 header .logo {
+  margin: 0;
+  line-height: 100%;
   width: calc(100% - 192px);
   flex: 0 0 auto;
 }
@@ -71,20 +72,18 @@ header .logo-text {
 }
 
 header .logo img {
-  width: 56px;
-  height: 56px;
-  line-height: 56px;
+  width: 54px;
+  height: 54px;
+  line-height: 64px;
+  margin: 0;
   margin-left: 24px;
 }
 
 header nav ul {
-  min-width: 192px;
-}
-
-header nav ul {
   display: flex;
-  line-height: 50px;
-  margin-left: 20px;
+  min-width: 192px;
+  line-height: 64px;
+  margin-left: 24px;
 }
 
 header nav ul li {
