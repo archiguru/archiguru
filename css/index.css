@@ -185,13 +185,13 @@ header nav ul li {
     display: block;
   }
   .wechat-qr {
-    width: 204px;
+    width: 194px;
     height: 204px;
-    background: url(https://bing.img.run/1920x1080.php);
+    background: url(https://img.archiguru.io/archiguru/IMG_3830.JPG);
     background-size: 100%;
     position: absolute;
+    bottom: 420px;
     display: none;
-    bottom: 100px;
   }
 }
 
