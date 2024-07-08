@@ -2,7 +2,6 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  /* 让内边距和边框不会增加元素的实际尺寸 */
 }
 
 html,
@@ -111,13 +110,11 @@ header nav ul li {
 
 .content .text-area {
   text-align: center;
-  /* margin-top: 6vh; */
   letter-spacing: 6px;
 }
 
 .content .text-area .title {
   font-size: 2.5rem;
-  /* margin: 20px; */
   color: orange;
 }
 
@@ -128,7 +125,6 @@ header nav ul li {
 
 .content .main .connecting-line {
   margin-top: 2vh;
-  /* margin-bottom: 6vh; */
 }
 
 .content .main .main-list {
@@ -145,10 +141,8 @@ header nav ul li {
   font-weight: 500;
   border: 2px solid #fffdf0;
   width: 20%;
-  min-width: 168px;
   height: 44px;
   line-height: 44px;
-  /* margin-bottom: 16px; */
   margin: 10px;
   background-color: transparent;
   border-radius: 8px;
@@ -156,6 +150,7 @@ header nav ul li {
 }
 
 .main-list li a {
+  font-family: "Arial", sans-serif;
   margin-left: -12px;
 }
 
@@ -225,6 +220,25 @@ footer .copyright a {
 }
 
 /* 响应式设计 */
+@media (max-width: 388px) {
+  footer {
+    display: none;
+  }
+  .content .text-area .description {
+    display: none;
+  }
+  .content .main .main-list li {
+    font-size: small !important;
+    width: 120px !important;
+  }
+  .main-list li a {
+    margin-left: 0;
+  }
+  .content .main .main-list li .fa {
+    display: none;
+  }
+}
+
 @media (max-width: 768px) {
   #container {
     max-width: 100%;
@@ -277,8 +291,9 @@ footer .copyright a {
     list-style: none;
   }
 
-  .main-list li {
-    width: 120px;
+  .content .main .main-list li {
+    font-size: small !important;
+    width: 150px !important;
   }
 }
 
@@ -307,22 +322,19 @@ footer .copyright a {
   }
 }
 
-/* footer 适配高度 */
 @media (max-height: 768px) {
   footer {
     display: none;
   }
 }
 
-/* footer 适配高度 */
-@media (max-width: 440px) {
-  footer {
+@media (max-height: 844px) {
+  .connecting-line {
     display: none;
   }
-  .content .main .main-list li {
-    min-width: 124px;
-  }
-  .main-list li .fa {
-    display: none;
+
+  .content .text-area .description {
+    padding-bottom: 24px;
+    color: orange;
   }
 }
